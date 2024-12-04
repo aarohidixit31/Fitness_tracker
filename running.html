@@ -1,0 +1,79 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Running tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="run.css">
+  </head>
+
+  <body>
+    <header class="header">
+          
+      <div class="back">
+          <a href="fit.html" > <button type="button">Back</button></a>
+      </div>
+      <div id="box1">
+          <img src="Lovepik_com-401759034-fitness-logo(1).png" height="50px" width="50px">
+
+          <p><strong>FIT</strong>NESS</p>
+
+      </div></header>
+       <hr> 
+    <div class="logo">
+      <img src="run.png" alt="">
+    </div>
+
+    <form id="forms">
+      <label for="entry">Number of miles today:</label>
+      <br>
+      <input type="number" id="entry" step="0.1">
+      <br>
+      <button type="submit">Add</button>
+    </form>
+    <hr>
+
+    <section class="entriesWrapper">
+      <h3>Last 7 days:</h3>
+      <ul id="entries">
+        
+        <li>-</li>
+        <li>-</li>
+        <li>-</li>
+        <li>-</li>
+        <li>-</li>
+        <li>-</li>
+      <li>0.5</li></ul>
+    </section>
+
+    <section class="data">
+      <div>
+        <p>Total:</p>
+        <span id="total">0.5</span>
+      </div>
+      <div>
+        <p>Average distance:</p>
+        <span id="average">0.5</span>
+      </div>
+      <div>
+        <p>This weeks high:</p>
+        <span id="high">0.5</span>
+      </div>
+    </section>
+
+    <section class="progress">
+      <h3>
+        Weekly target: <span id="progressTotal">0.5</span> /
+        <span id="target">25</span> miles
+      </h3>
+      <div class="progressCircleWrapper">
+        <div id="progressCircle" style="background: conic-gradient(rgb(112, 219, 112) 2%, rgb(45, 55, 64) 2%, rgb(45, 55, 64) 100%);">
+          <div id="progressCenter"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  
+
+</body>

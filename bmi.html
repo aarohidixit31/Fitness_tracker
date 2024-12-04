@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Calculator</title>
+    <link rel="stylesheet" href="bmi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body>
+    <header class="header">
+          
+            <div class="back">
+                <a href="fit.html" > <button type="button">Back</button></a>
+            </div>
+            <div id="box1">
+                <img src="Lovepik_com-401759034-fitness-logo(1).png" height="50px" width="50px">
+    
+                <p><strong>FIT</strong>NESS</p>
+    
+            </div>
+            <hr>
+            <div class="image"><img
+                    src="https://www.designnominees.com/application/upload/Apps/2023/10/bmi-calculator-48.png" alt="">
+            </div>
+            <main>
+                <section class="calculator">
+                    <h2 class="animate_animated animate_slideInRight">BMI Calculator</h2>
+                    <form id="bmiCalculator">
+                        <label for="height">Height (m):</label>
+                        <input type="number" id="height" placeholder="Enter height" step="0.1" required>
+
+                        <label for="weight">Weight (kg):</label>
+                        <input type="number" id="weight" placeholder="Enter weight" required>
+                        <br>
+                        <button type="button" id="calculateButton" onclick="calculateBMI()">Calculate BMI</button><br>
+                    </form>
+                    <div id="result"></div>
+                </section>
+            </main>
+
+
+    </header>
+<div class="para">
+    <p >A BMI calculator assesses body weight relative to height, indicating
+        if an individual
+        is underweight, normal, overweight, or obese.
+    </p>
+    <p>Body Mass Index (BMI) is a person's weight in kilograms (or pounds) divided by the square of height in meters (or feet). A high BMI can indicate high body fatness. BMI screens for weight categories that may lead to health problems, but it does not diagnose the body fatness or health of an individual</p>
+    <p>BMI is used by healthcare professionals to screen for overweight and obese individuals. The BMI is used to assess a person’s health risks associated with obesity and overweight.</p>
+    <p>For example those with a high BMI are at risk of:-</p>
+    <ul>
+        <li>
+            high blood cholesterol or other lipid disorders</li>
+         <li>   type 2 diabetes</li>
+         <li>  heart disease</li>
+         <li>  stroke</li>
+         <li> high blood pressure</li>
+         <li> certain cancers</li>
+         <li>   gallbladder disease</li>
+         <li>   sleep apnea and snoring</li>
+         <li>premature death</li>
+         <li> osteoarthritis and joint disease</li>
+    </ul>
+</div> 
+<div class="vim">
+    <img src="https://api.parashospitals.com/uploads/2017/10/BMI.png">
+    </div>
+    <footer>
+        <p>&copy; 2023 Fitness Calculator</p>
+    </footer>
+    <script>
+        function calculateBMI() {
+            // Get height and weight values from input fields
+            var height = parseFloat(document.getElementById('height').value);
+            var weight = parseFloat(document.getElementById('weight').value);
+
+            // Check if height and weight are valid numbers
+            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+                alert("Please enter valid height and weight values.");
+                return;
+            }
+
+            // Calculate BMI
+            var bmi = weight / (height * height);
+
+            // Display the result
+            document.getElementById('result').innerText = bmi.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

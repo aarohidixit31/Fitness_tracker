@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #444140;
+            color: #444140;
+        }
+
+        .header {
+
+            height: 15vh;
+
+            color: white;
+
+        }
+
+        #box1 {
+            position: absolute;
+            margin-top: -80px;
+            display: inline-block;
+            right: 60px;
+            /* border:2px solid black; */
+        }
+
+        .header button {
+            margin-top: 50px;
+            margin-left: 76px;
+            height: 40px;
+            width: 140px;
+            cursor: pointer;
+        }
+
+
+        #box1 p {
+            margin-top: -7px;
+            margin-left: -17px;
+            font-size: 25px;
+
+        }
+
+        #container {
+            background: #F7EBE8;
+            width: 280px;
+            height: 470px;
+            margin: 20px auto;
+            text-align: center;
+            border-radius: 20px;
+            padding: 20px;
+
+            button {
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+                margin: 0px 20px;
+                padding: 15px 30px;
+                color: #F7EBE8;
+            }
+
+            #reset {
+                background-color: #E54B4B;
+            }
+
+            #stop {
+                background-color: #3C0919;
+            }
+
+            #heart img {
+                height: 153px;
+                width: 166px;
+                margin-left: 9px;
+            }
+
+
+            #milliseconds,
+            #bps,
+            #tapper {
+                padding: 15px 0px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+                margin: 0px -2px 20px;
+                width: 100%;
+                background: white;
+                border: 2px solid #FFA987;
+                float: left;
+                clear: left;
+                position: relative;
+                border-radius: 10px;
+            }
+
+            #tapper {
+                border: 2px solid #E54B4B;
+                height: 220px;
+
+                #heart {
+                    color: #E54B4B;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    transition: transform 0.1s ease;
+                    -moz-transition: transform 0.1s ease;
+                    -ms-transition: transform 0.1s ease;
+                    -webkit-transition: transform 0.1s ease;
+
+                    i {
+                        font-size: 140px;
+                    }
+
+                    &.beat {
+                        color: #e23535;
+                        transform: scale(1.20);
+                        -moz-transform: scale(1.20);
+                        -webkit-transform: scale(1.20);
+                        -ms-transform: scale(1.20);
+                    }
+                }
+
+                .text {
+                    padding: 20px;
+                    text-align: center;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="back">
+            <a href="fit.html"> <button type="button">Back</button></a>
+        </div>
+        <div id="box1">
+            <img src="Lovepik_com-401759034-fitness-logo(1).png" height="50px" width="50px">
+
+            <p><strong>FIT</strong>NESS</p>
+
+        </div>
+        <hr>
+    </header>
+
+
+    <div id="container">
+        <div id="tapper" class="hits">
+            <div id="heart"><img src="heart.png" alt=""></div>
+            <div class="text laptop">Start pressing any key or tapping here along with your heartbeat</div>
+        </div>
+        <div id="milliseconds" class="hits">Seconds:
+            <span id="millisecondNum">0</span>
+        </div>
+        <div id="bps" class="hits">Heartrate:
+            <span id="bpsNum">0</span> bpm
+        </div>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+    <script>
+        var app = {
+
+            timerStarted: 'false',
+            startTime: 0,
+            countingTime: 0,
+            beatCount: 0,
+            timerInterval: '',
+
+            init: function () {
+
+                window.addEventListener("DOMContentLoaded", app.setUpHandlers, false);
+
+            },
+
+            setUpHandlers: function () { // comment about function
+
+                window.addEventListener("keydown", app.countBeats, false);
+                document.getElementById("tapper").addEventListener("click", app.countBeats);
+                document.getElementById("reset").addEventListener("click", app.resetMonitor);
+                document.getElementById("stop").addEventListener("click", app.stopMonitor);
+
+            },
+
+            stopMonitor: function () {
+                app.timerStarted = 'false';
+                clearInterval(app.timerInterval);
+            },
+
+            resetMonitor: function () {
+
+                app.timerStarted = 'false';
+                clearInterval(app.timerInterval);
+                document.getElementById('bpsNum').innerHTML = '0';
+                document.getElementById("millisecondNum").innerHTML = '0';
+                app.countingTime = 0;
+                app.beatCount = 0;
+
+            },
+
+            countBeats: function (event) {
+
+                // account for tap or key
+                var keyPressed = (event !== undefined) ? event.which : null;
+
+                // ignore command and tab because it's annoying when switching between programs
+                if (keyPressed !== 91 && keyPressed !== 9) {
+
+                    app.heartPulse();
+                    app.beatCount++;
+
+                    if (app.timerStarted === 'false') {
+                        app.timerStarted = 'true';
+                        app.startTime = Date.now();
+                        app.timerInterval = setInterval(app.countUp, 100);
+                        document.getElementById('bpsNum').innerHTML = 'First ';
+                    } else {
+
+                        document.getElementById('bpsNum').innerHTML = Math.floor((app.beatCount * 60) / app.countingTime);
+                    }
+                }
+            },
+
+            heartPulse: function () {
+                document.getElementById('heart').className = "beat";
+                setTimeout(function () {
+                    document.getElementById('heart').classList.remove("beat");
+                }, 100);
+            },
+
+            countUp: function () {
+                var elapsedTime = Date.now() - app.startTime;
+                app.countingTime = (elapsedTime / 1000).toFixed(3);
+                document.getElementById("millisecondNum").innerHTML = app.countingTime;
+            },
+
+        };
+
+        (function () {
+            "use strict";
+            app.init();
+        })();
+    </script>
+</body>
+
+</html>

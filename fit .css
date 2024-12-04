@@ -1,0 +1,208 @@
+body {
+   font-family: Helvetica, sans-serif;
+}
+.header {
+   height: 110vh;
+   background-image: url("https://c.wallhere.com/photos/ad/63/line_mesh_dark_shadow_spot-672255.jpg!d");
+   color: white;
+   background-size: cover;
+}
+#box1 {
+   margin-left: 175px;
+   display: inline-block;
+   margin-top: 4px;
+}
+#box1 p {
+   margin-top: -4px;
+   margin-left: -17px;
+   font-size: 25px;
+}
+#box3 {
+   display: inline-block;
+   position: absolute;
+   right: 380px;
+   margin-top: 20px;
+}
+#class3 img{
+   width: 130px;
+  height: 140px;
+  margin-top: 6px;
+  margin-left: 7px;
+}
+#box3 li {
+   list-style: none;
+   float: left;
+   margin-left: 38px;
+   margin-top: 23px;
+   font-size: 16px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#box3 li a{
+   text-decoration: none;
+   color:white;
+}
+#box3 ul li a:hover {
+   background-color: white;
+   color: black;
+   cursor: pointer;
+}
+.login {
+   position: absolute;
+   right: -200px;
+   margin-top: -342px;
+}
+.login p {
+   position: absolute;
+   right: 238px;
+   margin-top: -220px;
+}
+.login a {
+   text-decoration: none;
+   color: white;
+}
+.login a:hover {
+   background-color: white;
+   color: black;
+}
+.written {
+   margin-left: 340px;
+   margin-top: 167px;
+   font-size: 96px;
+}
+.writ {
+   margin-top: -117px;
+   margin-left: 32px;
+}
+.write {
+   margin-left: -60px;
+   font-size: 25px;
+   margin-top: -70px;
+}
+#class_sechdule {
+   text-align: center;
+   font-size: 23px;
+   font-family: Helvetica, sans-serif;
+}
+#class_sechdule span {
+   font-size: 14px;
+}
+#flex1 {
+   display: inline-flex;
+   flex-direction: column;
+}
+#flex2 {
+   display: inline-flex;
+   flex-direction: column;
+   margin-top: 23px;
+}
+.boxe {
+   background-color: rgb(250, 250, 250);
+   height: 150px;
+   width: 150px;
+   margin-top: 35px;
+   margin-left: 150px;
+   display: inline-block;
+   transition: transform 2s;
+}
+.boxe:hover {
+   box-shadow: 7px 7px 8px 8px rgb(207, 203, 203);
+   transform: scale(1.25);
+}
+.first_image {
+   position: absolute;
+   display: inline-block;
+   margin-top: 37px;
+   margin-left: 117px;
+   height: 525px;
+}
+.first_image img {
+   width: 400px;
+   height: 350px;
+}
+#class4 img {
+   height: 120px;
+   width: 88px;
+   margin-top: 29px;
+   margin-left: 25px;
+}
+#class1 img {
+   height: 117px;
+   width: 100px;
+   margin-top: 30px;
+   margin-left: 27px;
+}
+#class5 img {
+   height: 132px;
+   width: 133px;
+   margin-top: 19px;
+   margin-left: 7px;
+}
+/* .diet_chart {
+   margin-top: 107px;
+}
+.diet_chart img {
+   height: 694px;
+   margin-top: 50px;
+   height: 736px;
+   margin-top: 46px;
+   width: 1115px;
+   margin-left: 60px;
+} */
+.ffooter {
+   background-image: url("https://c4.wallpaperflare.com/wallpaper/797/548/47/strip-texture-dark-blue-wallpaper-preview.jpg");
+   margin-top: 7%;
+}
+.footer {
+   height: 650px;
+   display: flex;
+   font-family: Helvetica, sans-serif;
+   align-content: space-between;
+   justify-content: space-evenly;
+}
+.foot {
+   height: 460px;
+   width: 330px;
+   margin-top: 25px;
+   color: white;
+}
+.foot p {
+   line-height: 27px;
+   font-size: 20px;
+   text-align: left;
+   color: rgb(207, 202, 202)
+}
+.form-group {
+   margin-top: 23px;
+}
+#foot3 form {
+   margin-top: 23px;
+}
+#for {
+   width: 230px;
+   background-color: rgb(207, 202, 202);
+}
+#btn {
+   width: 112px;
+   height: 38px;
+   background-color: red;
+   color: white;
+}
+#btn:hover {
+   cursor: pointer;
+}
+.extra i {
+   display: inline-block;
+   margin-bottom: 6px;
+   margin-left: 23px;
+   height: 18px;
+   width: 35px;
+   font-size: 23px;
+}
+.extra {
+   height: 75px;
+   width: 35px;
+   display: flex;
+   color: white;
+   margin-top: -186px;
+   margin-left: 411px;
+}
