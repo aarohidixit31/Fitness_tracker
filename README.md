@@ -15,7 +15,7 @@ The **Fitness Tracker App** is your ultimate companion to monitor and improve yo
 
 ---
 
-## 🌟 Key Features
+## 🌟 Key Features::
 
 - **Activity Tracking**: Record workouts, steps, and calories burned.
 - **Progress Visualization**: View trends with intuitive graphs and charts.
